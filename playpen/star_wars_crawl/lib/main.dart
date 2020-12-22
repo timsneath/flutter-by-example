@@ -20,9 +20,9 @@ final textStyle = GoogleFonts.libreFranklin(
   fontWeight: FontWeight.w700,
 );
 
-final crawlString1 = """
+final crawlString1 = '''
 Flutter is Google’s UI toolkit for building beautiful, natively compiled applications for mobile, web, and desktop from a single codebase.
-""";
+''';
 final crawlString2 = """
 \nFast Development
 \nPaint your app to life in milliseconds with Stateful Hot Reload. Use a rich set of fully-customizable widgets to build native interfaces in minutes.
@@ -66,7 +66,7 @@ class Crawler extends StatefulWidget {
   final crawlDuration = const Duration(seconds: 30);
 
   @override
-  createState() => _CrawlerState();
+  _CrawlerState createState() => _CrawlerState();
 }
 
 class _CrawlerState extends State<Crawler> {
@@ -86,8 +86,8 @@ class _CrawlerState extends State<Crawler> {
 
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
 
     return SuperSize(
       height: 1279,
