@@ -6,24 +6,30 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:vector_math/vector_math_64.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() => runApp(MyApp());
 
 final yellow = Color(0xFFFFFF00);
 
-final textStyle = TextStyle(
-  color: yellow,
-  fontSize: 24,
+final textStyle = GoogleFonts.libreFranklin(
+  textStyle: TextStyle(
+    color: yellow,
+    fontSize: 48,
+  ),
+  fontWeight: FontWeight.w700,
 );
 
 final crawlString1 = """
-Lorem ipsum dolor sit amet, in sea illud veritus suavitate, mutat ullum ut pro. Fabulas accusata cu ius, nec an quem vituperatoribus, ex mel doctus splendide. Eam habeo fabellas ne, principes reprimique sea ad. Et vim scaevola accommodare. Vim ad eius adhuc homero. Maiestatis elaboraret ei nam.
-
-An usu fugit recteque ullamcorper, ea eos essent molestiae reprimique. Vocibus instructior ne nec. Justo reprehendunt ut has, vel ea clita signiferumque. Sale disputationi ut quo.
+Flutter is Google’s UI toolkit for building beautiful, natively compiled applications for mobile, web, and desktop from a single codebase.
 """;
 final crawlString2 = """
-\nCum nibh assentior tincidunt ad. Mei te accusam convenire partiendo, facilisi expetenda inciderint ei has. Falli corrumpit an per, no vis vidisse accusata, nibh noster dolores sea ex. Singulis accusamus at cum, tation aliquip mediocritatem duo et. Ei mel suas argumentum, pri no purto ignota quaerendum.
+\nFast Development
+\nPaint your app to life in milliseconds with Stateful Hot Reload. Use a rich set of fully-customizable widgets to build native interfaces in minutes.
+\n\nExpressive and Flexible UI
+\nQuickly ship features with a focus on native end-user experiences. Layered architecture allows for full customization, which results in incredibly fast rendering and expressive and flexible designs.
+\n\nNative Performance
+\nFlutter’s widgets incorporate all critical platform differences such as scrolling, navigation, icons and fonts, and your Flutter code is compiled to native ARM machine code using Dart's native compilers.
 """;
 
 class MyApp extends StatelessWidget {
@@ -31,7 +37,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return WidgetsApp(
-      color: Color(0xFF000000),
+      color: Colors.black,
       builder: (context, _) => CrawlPage(),
     );
   }
@@ -40,21 +46,24 @@ class MyApp extends StatelessWidget {
 class CrawlPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
-      Flexible(
-        flex: 5,
-        child: Perspective(child: Crawler()),
-      ),
-      Flexible(
-        flex: 1,
-        child: Column(),
-      ),
-    ]);
+    return Container(
+      decoration: BoxDecoration(color: Colors.black),
+      child: Column(children: [
+        Flexible(
+          flex: 5,
+          child: Perspective(child: Crawler()),
+        ),
+        Flexible(
+          flex: 1,
+          child: Column(),
+        ),
+      ]),
+    );
   }
 }
 
 class Crawler extends StatefulWidget {
-  final crawlDuration = const Duration(seconds: 20);
+  final crawlDuration = const Duration(seconds: 30);
 
   @override
   createState() => _CrawlerState();
